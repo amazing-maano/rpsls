@@ -33,61 +33,28 @@ function compRandomChoice() {
     }
 }
 
+let gamePairs = []
+
 function compare() {
     player.innerHTML = 'You have chosen ' + playerChoice;
     computer.innerHTML = 'Computer chooses ' + computerChoice;
 
     if (playerChoice == computerChoice) {
         outcome.innerHTML = 'Stalemate';
-    } else if (playerChoice === 'Rock') {
-            if (computerChoice === 'Paper') {
-                outcome.innerHTML = 'Paper covers Rock!';
-        } else if (computerChoice === 'Scissors') {
-                outcome.innerHTML = 'Rock crushes Scissors!';
-        } else if (computerChoice === 'Lizard') {
-                outcome.innerHTML = 'Rock crushes Lizard!';
-        } else {
-                outcome.innerHTML = 'Spock vaporizes Rock!';
-        }
-    } else if (playerChoice === 'Paper') {
-            if (computerChoice === 'Rock') {
-                outcome.innerHTML = 'Paper covers Rock!';
-        } else if (computerChoice === 'Scissors') {
-                outcome.innerHTML = 'Scissors cuts Paper!';
-        } else if (computerChoice === 'Lizard') {
-                outcome.innerHTML = 'Lizard eats Paper!';
-        } else {
-                outcome.innerHTML = 'Paper disproves Spock!';
-        }
-    } else if (playerChoice === 'Scissors') {
-            if (computerChoice === 'Rock') {
-                outcome.innerHTML = 'Rock crushes Scissors!';
-        } else if (computerChoice === 'Paper') {
-                outcome.innerHTML = 'Scissors cuts Paper!';
-        } else if (computerChoice === 'Lizard') {
-                outcome.innerHTML = 'Scissors decapitates Lizard!';
-        } else {
-                outcome.innerHTML = 'Spock smashes Scissors!';
-        }
-    } else if (playerChoice === 'Lizard') {
-            if (computerChoice === 'Rock') {
-                outcome.innerHTML = 'Rock crushes Lizard!';
-        } else if (computerChoice === 'Paper') {
-                outcome.innerHTML = 'Lizard eats Paper!';
-        } else if (computerChoice === 'Scissors') {
-                outcome.innerHTML = 'Scissors decapitates Lizard!';
-        } else {
-                outcome.innerHTML = 'Lizard poisons Spock';
-        }
-    } else if (playerChoice === 'Spock') {
-            if (computerChoice === 'Rock') {
-                outcome.innerHTML = 'Spock vaporizes Rock!';
-        } else if (computerChoice === 'Paper') {
-                outcome.innerHTML = 'Paper disproves Spock!';
-        } else if (computerChoice === 'Scissors') {
-                outcome.innerHTML = 'Spock smashes Scissors!';
-        } else {
-                outcome.innerHTML = 'Lizard poisons Spock!';
-        }
+    } else if ((playerChoice === 'Rock' && computerChoice === 'Scissors') ||
+    (playerChoice === 'Rock' && computerChoice === 'Lizard') ||
+    (playerChoice === 'Paper' && computerChoice === 'Rock') ||
+    (playerChoice === 'Paper' && computerChoice === 'Spock') ||
+    (playerChoice === 'Scissors' && computerChoice === 'Paper') ||
+    (playerChoice === 'Scissors' && computerChoice === 'Lizard') ||
+    (playerChoice === 'Lizard' && computerChoice === 'Paper') ||
+    (playerChoice === 'Lizard' && computerChoice === 'Spock') ||
+    (playerChoice === 'Spock' && computerChoice === 'Rock') ||
+    (playerChoice === 'Spock' && computerChoice === 'Scissors'))
+    {
+            outcome.innerHTML = 'You Win!';
+    }
+    else {
+            outcome.innerHTML = 'You Lose!';
     }
 }
