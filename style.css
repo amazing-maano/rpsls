@@ -1,0 +1,32 @@
+
+h1,h2,h5,h3, .button-box {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+#Rock, #Paper, #Scissors, #Lizard, #Spock {
+    border: 2px solid black;
+    height: 50px;
+    width: 100px;    
+}
+
+#Rock {
+    background-color: green;
+}
+
+#Paper {
+    background-color: red ;
+}
+
+#Scissors {
+    background-color: azure;
+}
+
+#Lizard {
+    background-color: aquamarine;
+}
+
+#Spock {
+    background-color: blue;
+}
