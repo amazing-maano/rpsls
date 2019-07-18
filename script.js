@@ -21,8 +21,8 @@ function run() {
 
 
 function compRandomChoice() {
-        var choices = ['Rock','Paper','Scissors','Lizard','Spock'];
-        var randomIndex = Math.floor(Math.random() * choices.length);
+        let choices = ['Rock','Paper','Scissors','Lizard','Spock'];
+        let randomIndex = Math.floor(Math.random() * choices.length);
         computerChoice = choices[randomIndex];
 }
 
