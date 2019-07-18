@@ -33,28 +33,41 @@ function compRandomChoice() {
     }
 }
 
-let gamePairs = []
+const gamePairs = {
+        Rock : {
+            Lizard: 'Rock crushes Lizard',
+            Scissors:'Rock crushes Scissors'
+        },
+        Paper : {
+            Rock: 'Paper covers Rock',
+            Spock: 'Paper disproves Spock'
+        },
+        Scissors : {
+            Paper: 'Scissors cuts Paper',
+            Lizard: 'Scissors decapitates Lizard'
+        },
+        Lizard : {
+            Spock: 'Lizard poisons Spock',
+            Paper: 'Lizard eats Paper'
+        },
+        Spock : {
+            Scissors: 'Spock smashes Scissors',
+            Rock: 'Spock vaporizes Rock'
+        }
+    }
 
 function compare() {
     player.innerHTML = 'You have chosen ' + playerChoice;
     computer.innerHTML = 'Computer chooses ' + computerChoice;
-
+        
     if (playerChoice == computerChoice) {
         outcome.innerHTML = 'Stalemate';
-    } else if ((playerChoice === 'Rock' && computerChoice === 'Scissors') ||
-    (playerChoice === 'Rock' && computerChoice === 'Lizard') ||
-    (playerChoice === 'Paper' && computerChoice === 'Rock') ||
-    (playerChoice === 'Paper' && computerChoice === 'Spock') ||
-    (playerChoice === 'Scissors' && computerChoice === 'Paper') ||
-    (playerChoice === 'Scissors' && computerChoice === 'Lizard') ||
-    (playerChoice === 'Lizard' && computerChoice === 'Paper') ||
-    (playerChoice === 'Lizard' && computerChoice === 'Spock') ||
-    (playerChoice === 'Spock' && computerChoice === 'Rock') ||
-    (playerChoice === 'Spock' && computerChoice === 'Scissors'))
-    {
+    } else{
+        var choice = gamePairs[playerChoice][computerChoice];
+        if (choice){
             outcome.innerHTML = 'You Win!';
-    }
-    else {
-            outcome.innerHTML = 'You Lose!';
+        } else{
+                outcome.innerHTML = 'You Lose!';
+        }
     }
 }
