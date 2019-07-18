@@ -18,19 +18,12 @@ function run() {
     compare();
 }
 
+
+
 function compRandomChoice() {
-    let dice = Math.random();
-    if (dice <= 0.2) {
-        computerChoice = 'Rock';
-    } else if (dice <= 0.4) {
-        computerChoice = 'Paper';
-    } else if (dice <= 0.6) {
-        computerChoice = 'Scissors';
-    } else if (dice <= 0.8) {
-        computerChoice = 'Lizard';
-    } else {
-        computerChoice = 'Spock';
-    }
+        var choices = ['Rock','Paper','Scissors','Lizard','Spock'];
+        var randomIndex = Math.floor(Math.random() * choices.length);
+        computerChoice = choices[randomIndex];
 }
 
 const gamePairs = {
@@ -63,7 +56,7 @@ function compare() {
     if (playerChoice == computerChoice) {
         outcome.innerHTML = 'Stalemate';
     } else{
-        var choice = gamePairs[playerChoice][computerChoice];
+        let choice = gamePairs[playerChoice][computerChoice];
         if (choice){
             outcome.innerHTML = 'You Win!';
         } else{
